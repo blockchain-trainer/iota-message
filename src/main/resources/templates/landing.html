@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="${titleHome}"></title>
+</head>
+<body>
+	<!-- container section start -->
+	<section id="container" class="">
+		<!--header end-->
+
+
+		<!--main content start-->
+		<section id="main-content">
+			<div class="row">
+				<section class="wrapper">
+					<img src="../img/iota.png" style="width: 150px; height: 40px;">
+					<hr />
+					<div>
+						<h4>Sign Message/Tag</h4>
+						<form autocomplete="off" th:action="@{/message}" method="post"
+							class="form-horizontal" role="form">
+							<input type="text" name="seed" placeholder="Seed"
+								class="form-control" style="width: 60%;" /><br /> <input
+								type="text" name="tag" placeholder="Tag" class="form-control"
+								style="width: 20%;" /><br /> <input type="text" name="msg"
+								placeholder="Message" class="form-control" style="width: 20%;" /><br />
+							<button type="submit" class="btn btn-primary btn-block"
+								id="sendMessage">Send</button>
+						</form>
+						<br /> <br /> <br />
+						<h4>Get Message/Tag</h4>
+						<form autocomplete="off" th:action="@{/retrieveMessage}"
+							method="post" class="form-horizontal" role="form">
+							<input type="text" name="txn" placeholder="Transaction"
+								class="form-control" style="width: 60%;" /><br />
+
+							<button type="submit" class="btn btn-primary btn-block"
+								id="sendMessage">Send</button>
+						</form>
+
+
+					</div>
+					<br /> <br />
+
+					<h4>Output</h4>
+					Transaction :<span th:text="${txn}"></span><br /> Tag :<span
+						th:text="${tag}"></span><br /> Msg :<span th:text="${msg}"></span><br />
+				</section>
+			</div>
+		</section>
+	</section>
+
+
+</body>
+</html>
